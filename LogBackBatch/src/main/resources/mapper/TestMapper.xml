@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kyoungjin.dao.TestDao">
+
+	<select id="getTestInfo" parameterType="testVo" resultType="testVo">
+		SELECT first
+		     , second
+		     , third
+		  FROM TEST
+		 <where>
+		 	<if test="first != null">first = #{first}</if>
+		 </where>
+	</select>
+
+</mapper>
